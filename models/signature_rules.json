@@ -1,0 +1,3693 @@
+[
+    {
+        "leaf_id": 2,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": "<=",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.11031408607959747
+            }
+        ],
+        "prediction": 0,
+        "confidence": 0.0
+    },
+    {
+        "leaf_id": 4,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": "<=",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.11031408607959747
+            },
+            {
+                "feature": "total_bytes",
+                "operator": "<=",
+                "threshold": -0.10424516350030899
+            }
+        ],
+        "prediction": 1,
+        "confidence": 1.0
+    },
+    {
+        "leaf_id": 5,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": "<=",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.11031408607959747
+            },
+            {
+                "feature": "total_bytes",
+                "operator": ">",
+                "threshold": -0.10424516350030899
+            }
+        ],
+        "prediction": 0,
+        "confidence": 0.0
+    },
+    {
+        "leaf_id": 13,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.7065922915935516
+            },
+            {
+                "feature": "tcprtt",
+                "operator": "<=",
+                "threshold": 7.593924522399902
+            },
+            {
+                "feature": "dbytes",
+                "operator": "<=",
+                "threshold": -0.09373868256807327
+            },
+            {
+                "feature": "dbytes",
+                "operator": "<=",
+                "threshold": -0.09967656806111336
+            },
+            {
+                "feature": "dload",
+                "operator": "<=",
+                "threshold": -0.27615511417388916
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.9351717464925012
+    },
+    {
+        "leaf_id": 14,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.7065922915935516
+            },
+            {
+                "feature": "tcprtt",
+                "operator": "<=",
+                "threshold": 7.593924522399902
+            },
+            {
+                "feature": "dbytes",
+                "operator": "<=",
+                "threshold": -0.09373868256807327
+            },
+            {
+                "feature": "dbytes",
+                "operator": "<=",
+                "threshold": -0.09967656806111336
+            },
+            {
+                "feature": "dload",
+                "operator": ">",
+                "threshold": -0.27615511417388916
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.9884346422807961
+    },
+    {
+        "leaf_id": 16,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.7065922915935516
+            },
+            {
+                "feature": "tcprtt",
+                "operator": "<=",
+                "threshold": 7.593924522399902
+            },
+            {
+                "feature": "dbytes",
+                "operator": "<=",
+                "threshold": -0.09373868256807327
+            },
+            {
+                "feature": "dbytes",
+                "operator": ">",
+                "threshold": -0.09967656806111336
+            },
+            {
+                "feature": "dmean",
+                "operator": "<=",
+                "threshold": -0.2271377295255661
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.7462406015037594
+    },
+    {
+        "leaf_id": 17,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.7065922915935516
+            },
+            {
+                "feature": "tcprtt",
+                "operator": "<=",
+                "threshold": 7.593924522399902
+            },
+            {
+                "feature": "dbytes",
+                "operator": "<=",
+                "threshold": -0.09373868256807327
+            },
+            {
+                "feature": "dbytes",
+                "operator": ">",
+                "threshold": -0.09967656806111336
+            },
+            {
+                "feature": "dmean",
+                "operator": ">",
+                "threshold": -0.2271377295255661
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.9260628465804066
+    },
+    {
+        "leaf_id": 20,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.7065922915935516
+            },
+            {
+                "feature": "tcprtt",
+                "operator": "<=",
+                "threshold": 7.593924522399902
+            },
+            {
+                "feature": "dbytes",
+                "operator": ">",
+                "threshold": -0.09373868256807327
+            },
+            {
+                "feature": "ttl_difference",
+                "operator": "<=",
+                "threshold": -0.3487098515033722
+            },
+            {
+                "feature": "dmean",
+                "operator": "<=",
+                "threshold": 3.547304391860962
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.9949748743718593
+    },
+    {
+        "leaf_id": 21,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.7065922915935516
+            },
+            {
+                "feature": "tcprtt",
+                "operator": "<=",
+                "threshold": 7.593924522399902
+            },
+            {
+                "feature": "dbytes",
+                "operator": ">",
+                "threshold": -0.09373868256807327
+            },
+            {
+                "feature": "ttl_difference",
+                "operator": "<=",
+                "threshold": -0.3487098515033722
+            },
+            {
+                "feature": "dmean",
+                "operator": ">",
+                "threshold": 3.547304391860962
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.8823529411764706
+    },
+    {
+        "leaf_id": 23,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.7065922915935516
+            },
+            {
+                "feature": "tcprtt",
+                "operator": "<=",
+                "threshold": 7.593924522399902
+            },
+            {
+                "feature": "dbytes",
+                "operator": ">",
+                "threshold": -0.09373868256807327
+            },
+            {
+                "feature": "ttl_difference",
+                "operator": ">",
+                "threshold": -0.3487098515033722
+            },
+            {
+                "feature": "sinpkt",
+                "operator": "<=",
+                "threshold": -0.015217761043459177
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.997610294117647
+    },
+    {
+        "leaf_id": 24,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.7065922915935516
+            },
+            {
+                "feature": "tcprtt",
+                "operator": "<=",
+                "threshold": 7.593924522399902
+            },
+            {
+                "feature": "dbytes",
+                "operator": ">",
+                "threshold": -0.09373868256807327
+            },
+            {
+                "feature": "ttl_difference",
+                "operator": ">",
+                "threshold": -0.3487098515033722
+            },
+            {
+                "feature": "sinpkt",
+                "operator": ">",
+                "threshold": -0.015217761043459177
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.95
+    },
+    {
+        "leaf_id": 25,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.7065922915935516
+            },
+            {
+                "feature": "tcprtt",
+                "operator": ">",
+                "threshold": 7.593924522399902
+            }
+        ],
+        "prediction": 0,
+        "confidence": 0.125
+    },
+    {
+        "leaf_id": 30,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.7065922915935516
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": "<=",
+                "threshold": -0.6598921716213226
+            },
+            {
+                "feature": "tcprtt",
+                "operator": "<=",
+                "threshold": 2.290186285972595
+            },
+            {
+                "feature": "rate",
+                "operator": "<=",
+                "threshold": -0.5766678154468536
+            },
+            {
+                "feature": "dbytes",
+                "operator": "<=",
+                "threshold": -0.09346719458699226
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.9183673469387755
+    },
+    {
+        "leaf_id": 31,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.7065922915935516
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": "<=",
+                "threshold": -0.6598921716213226
+            },
+            {
+                "feature": "tcprtt",
+                "operator": "<=",
+                "threshold": 2.290186285972595
+            },
+            {
+                "feature": "rate",
+                "operator": "<=",
+                "threshold": -0.5766678154468536
+            },
+            {
+                "feature": "dbytes",
+                "operator": ">",
+                "threshold": -0.09346719458699226
+            }
+        ],
+        "prediction": 1,
+        "confidence": 1.0
+    },
+    {
+        "leaf_id": 33,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.7065922915935516
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": "<=",
+                "threshold": -0.6598921716213226
+            },
+            {
+                "feature": "tcprtt",
+                "operator": "<=",
+                "threshold": 2.290186285972595
+            },
+            {
+                "feature": "rate",
+                "operator": ">",
+                "threshold": -0.5766678154468536
+            },
+            {
+                "feature": "sload",
+                "operator": "<=",
+                "threshold": -0.17070800811052322
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.9848675914249685
+    },
+    {
+        "leaf_id": 34,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.7065922915935516
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": "<=",
+                "threshold": -0.6598921716213226
+            },
+            {
+                "feature": "tcprtt",
+                "operator": "<=",
+                "threshold": 2.290186285972595
+            },
+            {
+                "feature": "rate",
+                "operator": ">",
+                "threshold": -0.5766678154468536
+            },
+            {
+                "feature": "sload",
+                "operator": ">",
+                "threshold": -0.17070800811052322
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.8666666666666667
+    },
+    {
+        "leaf_id": 37,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.7065922915935516
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": "<=",
+                "threshold": -0.6598921716213226
+            },
+            {
+                "feature": "tcprtt",
+                "operator": ">",
+                "threshold": 2.290186285972595
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.13732023537158966
+            },
+            {
+                "feature": "packet_ratio",
+                "operator": "<=",
+                "threshold": -0.15444070845842361
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.8795180722891566
+    },
+    {
+        "leaf_id": 38,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.7065922915935516
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": "<=",
+                "threshold": -0.6598921716213226
+            },
+            {
+                "feature": "tcprtt",
+                "operator": ">",
+                "threshold": 2.290186285972595
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.13732023537158966
+            },
+            {
+                "feature": "packet_ratio",
+                "operator": ">",
+                "threshold": -0.15444070845842361
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.9595959595959596
+    },
+    {
+        "leaf_id": 39,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.7065922915935516
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": "<=",
+                "threshold": -0.6598921716213226
+            },
+            {
+                "feature": "tcprtt",
+                "operator": ">",
+                "threshold": 2.290186285972595
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.13732023537158966
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.5384615384615384
+    },
+    {
+        "leaf_id": 43,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.7065922915935516
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": ">",
+                "threshold": -0.6598921716213226
+            },
+            {
+                "feature": "dbytes",
+                "operator": "<=",
+                "threshold": -0.0935576893389225
+            },
+            {
+                "feature": "sttl",
+                "operator": "<=",
+                "threshold": -0.20931664109230042
+            },
+            {
+                "feature": "sinpkt",
+                "operator": "<=",
+                "threshold": -0.12873417139053345
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.8672566371681416
+    },
+    {
+        "leaf_id": 44,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.7065922915935516
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": ">",
+                "threshold": -0.6598921716213226
+            },
+            {
+                "feature": "dbytes",
+                "operator": "<=",
+                "threshold": -0.0935576893389225
+            },
+            {
+                "feature": "sttl",
+                "operator": "<=",
+                "threshold": -0.20931664109230042
+            },
+            {
+                "feature": "sinpkt",
+                "operator": ">",
+                "threshold": -0.12873417139053345
+            }
+        ],
+        "prediction": 0,
+        "confidence": 0.33996683250414594
+    },
+    {
+        "leaf_id": 46,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.7065922915935516
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": ">",
+                "threshold": -0.6598921716213226
+            },
+            {
+                "feature": "dbytes",
+                "operator": "<=",
+                "threshold": -0.0935576893389225
+            },
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -0.20931664109230042
+            },
+            {
+                "feature": "dmean",
+                "operator": "<=",
+                "threshold": -0.2213308960199356
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.6757102636293831
+    },
+    {
+        "leaf_id": 47,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.7065922915935516
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": ">",
+                "threshold": -0.6598921716213226
+            },
+            {
+                "feature": "dbytes",
+                "operator": "<=",
+                "threshold": -0.0935576893389225
+            },
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -0.20931664109230042
+            },
+            {
+                "feature": "dmean",
+                "operator": ">",
+                "threshold": -0.2213308960199356
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.9136752136752136
+    },
+    {
+        "leaf_id": 50,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.7065922915935516
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": ">",
+                "threshold": -0.6598921716213226
+            },
+            {
+                "feature": "dbytes",
+                "operator": ">",
+                "threshold": -0.0935576893389225
+            },
+            {
+                "feature": "ackdat",
+                "operator": "<=",
+                "threshold": 2.8813908100128174
+            },
+            {
+                "feature": "sinpkt",
+                "operator": "<=",
+                "threshold": -0.12352751940488815
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.9788359788359788
+    },
+    {
+        "leaf_id": 51,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.7065922915935516
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": ">",
+                "threshold": -0.6598921716213226
+            },
+            {
+                "feature": "dbytes",
+                "operator": ">",
+                "threshold": -0.0935576893389225
+            },
+            {
+                "feature": "ackdat",
+                "operator": "<=",
+                "threshold": 2.8813908100128174
+            },
+            {
+                "feature": "sinpkt",
+                "operator": ">",
+                "threshold": -0.12352751940488815
+            }
+        ],
+        "prediction": 1,
+        "confidence": 1.0
+    },
+    {
+        "leaf_id": 52,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.7065922915935516
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": ">",
+                "threshold": -0.6598921716213226
+            },
+            {
+                "feature": "dbytes",
+                "operator": ">",
+                "threshold": -0.0935576893389225
+            },
+            {
+                "feature": "ackdat",
+                "operator": ">",
+                "threshold": 2.8813908100128174
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.9230769230769231
+    },
+    {
+        "leaf_id": 58,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_state_ttl",
+                "operator": "<=",
+                "threshold": 1.2529516518115997
+            },
+            {
+                "feature": "dmean",
+                "operator": "<=",
+                "threshold": -0.22520212084054947
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": "<=",
+                "threshold": -0.5686192810535431
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": "<=",
+                "threshold": -0.6598921716213226
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.13886304199695587
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.9542168674698795
+    },
+    {
+        "leaf_id": 59,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_state_ttl",
+                "operator": "<=",
+                "threshold": 1.2529516518115997
+            },
+            {
+                "feature": "dmean",
+                "operator": "<=",
+                "threshold": -0.22520212084054947
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": "<=",
+                "threshold": -0.5686192810535431
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": "<=",
+                "threshold": -0.6598921716213226
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.13886304199695587
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.7465753424657534
+    },
+    {
+        "leaf_id": 61,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_state_ttl",
+                "operator": "<=",
+                "threshold": 1.2529516518115997
+            },
+            {
+                "feature": "dmean",
+                "operator": "<=",
+                "threshold": -0.22520212084054947
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": "<=",
+                "threshold": -0.5686192810535431
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": ">",
+                "threshold": -0.6598921716213226
+            },
+            {
+                "feature": "tcprtt",
+                "operator": "<=",
+                "threshold": 1.2306836247444153
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.8025078369905956
+    },
+    {
+        "leaf_id": 62,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_state_ttl",
+                "operator": "<=",
+                "threshold": 1.2529516518115997
+            },
+            {
+                "feature": "dmean",
+                "operator": "<=",
+                "threshold": -0.22520212084054947
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": "<=",
+                "threshold": -0.5686192810535431
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": ">",
+                "threshold": -0.6598921716213226
+            },
+            {
+                "feature": "tcprtt",
+                "operator": ">",
+                "threshold": 1.2306836247444153
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.5783410138248848
+    },
+    {
+        "leaf_id": 65,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_state_ttl",
+                "operator": "<=",
+                "threshold": 1.2529516518115997
+            },
+            {
+                "feature": "dmean",
+                "operator": "<=",
+                "threshold": -0.22520212084054947
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": ">",
+                "threshold": -0.5686192810535431
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.09379569813609123
+            },
+            {
+                "feature": "dur",
+                "operator": "<=",
+                "threshold": -0.014098216779530048
+            }
+        ],
+        "prediction": 0,
+        "confidence": 0.47337939443202603
+    },
+    {
+        "leaf_id": 66,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_state_ttl",
+                "operator": "<=",
+                "threshold": 1.2529516518115997
+            },
+            {
+                "feature": "dmean",
+                "operator": "<=",
+                "threshold": -0.22520212084054947
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": ">",
+                "threshold": -0.5686192810535431
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.09379569813609123
+            },
+            {
+                "feature": "dur",
+                "operator": ">",
+                "threshold": -0.014098216779530048
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.6709601873536299
+    },
+    {
+        "leaf_id": 68,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_state_ttl",
+                "operator": "<=",
+                "threshold": 1.2529516518115997
+            },
+            {
+                "feature": "dmean",
+                "operator": "<=",
+                "threshold": -0.22520212084054947
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": ">",
+                "threshold": -0.5686192810535431
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.09379569813609123
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": 0.3160051107406616
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.6830732292917167
+    },
+    {
+        "leaf_id": 69,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_state_ttl",
+                "operator": "<=",
+                "threshold": 1.2529516518115997
+            },
+            {
+                "feature": "dmean",
+                "operator": "<=",
+                "threshold": -0.22520212084054947
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": ">",
+                "threshold": -0.5686192810535431
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.09379569813609123
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": 0.3160051107406616
+            }
+        ],
+        "prediction": 0,
+        "confidence": 0.4011627906976744
+    },
+    {
+        "leaf_id": 73,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_state_ttl",
+                "operator": "<=",
+                "threshold": 1.2529516518115997
+            },
+            {
+                "feature": "dmean",
+                "operator": ">",
+                "threshold": -0.22520212084054947
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.14083843678236008
+            },
+            {
+                "feature": "total_bytes",
+                "operator": "<=",
+                "threshold": -0.0942375622689724
+            },
+            {
+                "feature": "total_bytes",
+                "operator": "<=",
+                "threshold": -0.09652941673994064
+            }
+        ],
+        "prediction": 1,
+        "confidence": 1.0
+    },
+    {
+        "leaf_id": 74,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_state_ttl",
+                "operator": "<=",
+                "threshold": 1.2529516518115997
+            },
+            {
+                "feature": "dmean",
+                "operator": ">",
+                "threshold": -0.22520212084054947
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.14083843678236008
+            },
+            {
+                "feature": "total_bytes",
+                "operator": "<=",
+                "threshold": -0.0942375622689724
+            },
+            {
+                "feature": "total_bytes",
+                "operator": ">",
+                "threshold": -0.09652941673994064
+            }
+        ],
+        "prediction": 0,
+        "confidence": 0.4266666666666667
+    },
+    {
+        "leaf_id": 76,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_state_ttl",
+                "operator": "<=",
+                "threshold": 1.2529516518115997
+            },
+            {
+                "feature": "dmean",
+                "operator": ">",
+                "threshold": -0.22520212084054947
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.14083843678236008
+            },
+            {
+                "feature": "total_bytes",
+                "operator": ">",
+                "threshold": -0.0942375622689724
+            },
+            {
+                "feature": "dmean",
+                "operator": "<=",
+                "threshold": 0.08256008848547935
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.55
+    },
+    {
+        "leaf_id": 77,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_state_ttl",
+                "operator": "<=",
+                "threshold": 1.2529516518115997
+            },
+            {
+                "feature": "dmean",
+                "operator": ">",
+                "threshold": -0.22520212084054947
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.14083843678236008
+            },
+            {
+                "feature": "total_bytes",
+                "operator": ">",
+                "threshold": -0.0942375622689724
+            },
+            {
+                "feature": "dmean",
+                "operator": ">",
+                "threshold": 0.08256008848547935
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.954225352112676
+    },
+    {
+        "leaf_id": 80,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_state_ttl",
+                "operator": "<=",
+                "threshold": 1.2529516518115997
+            },
+            {
+                "feature": "dmean",
+                "operator": ">",
+                "threshold": -0.22520212084054947
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.14083843678236008
+            },
+            {
+                "feature": "total_bytes",
+                "operator": "<=",
+                "threshold": -0.0969473160803318
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": "<=",
+                "threshold": -0.20352768152952194
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.7515527950310559
+    },
+    {
+        "leaf_id": 81,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_state_ttl",
+                "operator": "<=",
+                "threshold": 1.2529516518115997
+            },
+            {
+                "feature": "dmean",
+                "operator": ">",
+                "threshold": -0.22520212084054947
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.14083843678236008
+            },
+            {
+                "feature": "total_bytes",
+                "operator": "<=",
+                "threshold": -0.0969473160803318
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": ">",
+                "threshold": -0.20352768152952194
+            }
+        ],
+        "prediction": 1,
+        "confidence": 1.0
+    },
+    {
+        "leaf_id": 83,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_state_ttl",
+                "operator": "<=",
+                "threshold": 1.2529516518115997
+            },
+            {
+                "feature": "dmean",
+                "operator": ">",
+                "threshold": -0.22520212084054947
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.14083843678236008
+            },
+            {
+                "feature": "total_bytes",
+                "operator": ">",
+                "threshold": -0.0969473160803318
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.1405738666653633
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.9004329004329005
+    },
+    {
+        "leaf_id": 84,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_state_ttl",
+                "operator": "<=",
+                "threshold": 1.2529516518115997
+            },
+            {
+                "feature": "dmean",
+                "operator": ">",
+                "threshold": -0.22520212084054947
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.14083843678236008
+            },
+            {
+                "feature": "total_bytes",
+                "operator": ">",
+                "threshold": -0.0969473160803318
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.1405738666653633
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.9580467675378267
+    },
+    {
+        "leaf_id": 86,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_state_ttl",
+                "operator": ">",
+                "threshold": 1.2529516518115997
+            },
+            {
+                "feature": "packet_ratio",
+                "operator": "<=",
+                "threshold": -0.11279726214706898
+            }
+        ],
+        "prediction": 1,
+        "confidence": 1.0
+    },
+    {
+        "leaf_id": 88,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_state_ttl",
+                "operator": ">",
+                "threshold": 1.2529516518115997
+            },
+            {
+                "feature": "packet_ratio",
+                "operator": ">",
+                "threshold": -0.11279726214706898
+            },
+            {
+                "feature": "sinpkt",
+                "operator": "<=",
+                "threshold": 3.354536771774292
+            }
+        ],
+        "prediction": 0,
+        "confidence": 0.0
+    },
+    {
+        "leaf_id": 90,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_state_ttl",
+                "operator": ">",
+                "threshold": 1.2529516518115997
+            },
+            {
+                "feature": "packet_ratio",
+                "operator": ">",
+                "threshold": -0.11279726214706898
+            },
+            {
+                "feature": "sinpkt",
+                "operator": ">",
+                "threshold": 3.354536771774292
+            },
+            {
+                "feature": "sload",
+                "operator": "<=",
+                "threshold": -0.14895768463611603
+            }
+        ],
+        "prediction": 1,
+        "confidence": 1.0
+    },
+    {
+        "leaf_id": 91,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_state_ttl",
+                "operator": ">",
+                "threshold": 1.2529516518115997
+            },
+            {
+                "feature": "packet_ratio",
+                "operator": ">",
+                "threshold": -0.11279726214706898
+            },
+            {
+                "feature": "sinpkt",
+                "operator": ">",
+                "threshold": 3.354536771774292
+            },
+            {
+                "feature": "sload",
+                "operator": ">",
+                "threshold": -0.14895768463611603
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.65
+    },
+    {
+        "leaf_id": 98,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "state",
+                "operator": "<=",
+                "threshold": 3.5
+            },
+            {
+                "feature": "ttl_difference",
+                "operator": "<=",
+                "threshold": -0.09542888402938843
+            },
+            {
+                "feature": "total_bytes",
+                "operator": "<=",
+                "threshold": 0.49485380947589874
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.043770113959908485
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.07376477122306824
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.9
+    },
+    {
+        "leaf_id": 99,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "state",
+                "operator": "<=",
+                "threshold": 3.5
+            },
+            {
+                "feature": "ttl_difference",
+                "operator": "<=",
+                "threshold": -0.09542888402938843
+            },
+            {
+                "feature": "total_bytes",
+                "operator": "<=",
+                "threshold": 0.49485380947589874
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.043770113959908485
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07376477122306824
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.9922178988326849
+    },
+    {
+        "leaf_id": 100,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "state",
+                "operator": "<=",
+                "threshold": 3.5
+            },
+            {
+                "feature": "ttl_difference",
+                "operator": "<=",
+                "threshold": -0.09542888402938843
+            },
+            {
+                "feature": "total_bytes",
+                "operator": "<=",
+                "threshold": 0.49485380947589874
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.043770113959908485
+            }
+        ],
+        "prediction": 0,
+        "confidence": 0.45
+    },
+    {
+        "leaf_id": 103,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "state",
+                "operator": "<=",
+                "threshold": 3.5
+            },
+            {
+                "feature": "ttl_difference",
+                "operator": "<=",
+                "threshold": -0.09542888402938843
+            },
+            {
+                "feature": "total_bytes",
+                "operator": ">",
+                "threshold": 0.49485380947589874
+            },
+            {
+                "feature": "total_bytes",
+                "operator": "<=",
+                "threshold": 0.4969499111175537
+            },
+            {
+                "feature": "total_bytes",
+                "operator": "<=",
+                "threshold": 0.49618008732795715
+            }
+        ],
+        "prediction": 0,
+        "confidence": 0.029411764705882353
+    },
+    {
+        "leaf_id": 104,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "state",
+                "operator": "<=",
+                "threshold": 3.5
+            },
+            {
+                "feature": "ttl_difference",
+                "operator": "<=",
+                "threshold": -0.09542888402938843
+            },
+            {
+                "feature": "total_bytes",
+                "operator": ">",
+                "threshold": 0.49485380947589874
+            },
+            {
+                "feature": "total_bytes",
+                "operator": "<=",
+                "threshold": 0.4969499111175537
+            },
+            {
+                "feature": "total_bytes",
+                "operator": ">",
+                "threshold": 0.49618008732795715
+            }
+        ],
+        "prediction": 0,
+        "confidence": 0.3548387096774194
+    },
+    {
+        "leaf_id": 106,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "state",
+                "operator": "<=",
+                "threshold": 3.5
+            },
+            {
+                "feature": "ttl_difference",
+                "operator": "<=",
+                "threshold": -0.09542888402938843
+            },
+            {
+                "feature": "total_bytes",
+                "operator": ">",
+                "threshold": 0.49485380947589874
+            },
+            {
+                "feature": "total_bytes",
+                "operator": ">",
+                "threshold": 0.4969499111175537
+            },
+            {
+                "feature": "total_bytes",
+                "operator": "<=",
+                "threshold": 1.396527647972107
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.8295964125560538
+    },
+    {
+        "leaf_id": 107,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "state",
+                "operator": "<=",
+                "threshold": 3.5
+            },
+            {
+                "feature": "ttl_difference",
+                "operator": "<=",
+                "threshold": -0.09542888402938843
+            },
+            {
+                "feature": "total_bytes",
+                "operator": ">",
+                "threshold": 0.49485380947589874
+            },
+            {
+                "feature": "total_bytes",
+                "operator": ">",
+                "threshold": 0.4969499111175537
+            },
+            {
+                "feature": "total_bytes",
+                "operator": ">",
+                "threshold": 1.396527647972107
+            }
+        ],
+        "prediction": 1,
+        "confidence": 1.0
+    },
+    {
+        "leaf_id": 110,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "state",
+                "operator": "<=",
+                "threshold": 3.5
+            },
+            {
+                "feature": "ttl_difference",
+                "operator": ">",
+                "threshold": -0.09542888402938843
+            },
+            {
+                "feature": "sload",
+                "operator": "<=",
+                "threshold": -0.3897266983985901
+            },
+            {
+                "feature": "dur",
+                "operator": "<=",
+                "threshold": -0.2097703516483307
+            }
+        ],
+        "prediction": 1,
+        "confidence": 1.0
+    },
+    {
+        "leaf_id": 111,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "state",
+                "operator": "<=",
+                "threshold": 3.5
+            },
+            {
+                "feature": "ttl_difference",
+                "operator": ">",
+                "threshold": -0.09542888402938843
+            },
+            {
+                "feature": "sload",
+                "operator": "<=",
+                "threshold": -0.3897266983985901
+            },
+            {
+                "feature": "dur",
+                "operator": ">",
+                "threshold": -0.2097703516483307
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.5454545454545454
+    },
+    {
+        "leaf_id": 114,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "state",
+                "operator": "<=",
+                "threshold": 3.5
+            },
+            {
+                "feature": "ttl_difference",
+                "operator": ">",
+                "threshold": -0.09542888402938843
+            },
+            {
+                "feature": "sload",
+                "operator": ">",
+                "threshold": -0.3897266983985901
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.0239291125908494
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": "<=",
+                "threshold": -0.3860734850168228
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.9969587665322865
+    },
+    {
+        "leaf_id": 115,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "state",
+                "operator": "<=",
+                "threshold": 3.5
+            },
+            {
+                "feature": "ttl_difference",
+                "operator": ">",
+                "threshold": -0.09542888402938843
+            },
+            {
+                "feature": "sload",
+                "operator": ">",
+                "threshold": -0.3897266983985901
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.0239291125908494
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": ">",
+                "threshold": -0.3860734850168228
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.9996492782515598
+    },
+    {
+        "leaf_id": 116,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "state",
+                "operator": "<=",
+                "threshold": 3.5
+            },
+            {
+                "feature": "ttl_difference",
+                "operator": ">",
+                "threshold": -0.09542888402938843
+            },
+            {
+                "feature": "sload",
+                "operator": ">",
+                "threshold": -0.3897266983985901
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.0239291125908494
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.9
+    },
+    {
+        "leaf_id": 117,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "state",
+                "operator": ">",
+                "threshold": 3.5
+            }
+        ],
+        "prediction": 0,
+        "confidence": 0.0
+    },
+    {
+        "leaf_id": 121,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": 0.3160051107406616
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_state_ttl",
+                "operator": "<=",
+                "threshold": -0.8425983488559723
+            }
+        ],
+        "prediction": 0,
+        "confidence": 0.3125
+    },
+    {
+        "leaf_id": 124,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": 0.3160051107406616
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_state_ttl",
+                "operator": ">",
+                "threshold": -0.8425983488559723
+            },
+            {
+                "feature": "sload",
+                "operator": "<=",
+                "threshold": 1.18808513879776
+            },
+            {
+                "feature": "sload",
+                "operator": "<=",
+                "threshold": 0.10412482917308807
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.9989157932779184
+    },
+    {
+        "leaf_id": 125,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": 0.3160051107406616
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_state_ttl",
+                "operator": ">",
+                "threshold": -0.8425983488559723
+            },
+            {
+                "feature": "sload",
+                "operator": "<=",
+                "threshold": 1.18808513879776
+            },
+            {
+                "feature": "sload",
+                "operator": ">",
+                "threshold": 0.10412482917308807
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.9619047619047619
+    },
+    {
+        "leaf_id": 127,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": 0.3160051107406616
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_state_ttl",
+                "operator": ">",
+                "threshold": -0.8425983488559723
+            },
+            {
+                "feature": "sload",
+                "operator": ">",
+                "threshold": 1.18808513879776
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": "<=",
+                "threshold": 0.26314981281757355
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.9922480620155039
+    },
+    {
+        "leaf_id": 128,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": 0.3160051107406616
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "ct_state_ttl",
+                "operator": ">",
+                "threshold": -0.8425983488559723
+            },
+            {
+                "feature": "sload",
+                "operator": ">",
+                "threshold": 1.18808513879776
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": 0.26314981281757355
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.8710298363811357
+    },
+    {
+        "leaf_id": 132,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": 0.3160051107406616
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "packet_ratio",
+                "operator": "<=",
+                "threshold": 0.0234153363853693
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": "<=",
+                "threshold": -0.5686192810535431
+            },
+            {
+                "feature": "sinpkt",
+                "operator": "<=",
+                "threshold": -0.1361413523554802
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.9395604395604396
+    },
+    {
+        "leaf_id": 133,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": 0.3160051107406616
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "packet_ratio",
+                "operator": "<=",
+                "threshold": 0.0234153363853693
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": "<=",
+                "threshold": -0.5686192810535431
+            },
+            {
+                "feature": "sinpkt",
+                "operator": ">",
+                "threshold": -0.1361413523554802
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.7142857142857143
+    },
+    {
+        "leaf_id": 135,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": 0.3160051107406616
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "packet_ratio",
+                "operator": "<=",
+                "threshold": 0.0234153363853693
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": ">",
+                "threshold": -0.5686192810535431
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": "<=",
+                "threshold": -0.20352768152952194
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.7365319865319865
+    },
+    {
+        "leaf_id": 136,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": 0.3160051107406616
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "packet_ratio",
+                "operator": "<=",
+                "threshold": 0.0234153363853693
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": ">",
+                "threshold": -0.5686192810535431
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": ">",
+                "threshold": -0.20352768152952194
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.6185286103542235
+    },
+    {
+        "leaf_id": 139,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": 0.3160051107406616
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "packet_ratio",
+                "operator": ">",
+                "threshold": 0.0234153363853693
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": "<=",
+                "threshold": 0.1615639291703701
+            },
+            {
+                "feature": "total_bytes",
+                "operator": "<=",
+                "threshold": -0.10329939052462578
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.65
+    },
+    {
+        "leaf_id": 140,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": 0.3160051107406616
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "packet_ratio",
+                "operator": ">",
+                "threshold": 0.0234153363853693
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": "<=",
+                "threshold": 0.1615639291703701
+            },
+            {
+                "feature": "total_bytes",
+                "operator": ">",
+                "threshold": -0.10329939052462578
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.9915966386554622
+    },
+    {
+        "leaf_id": 142,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": 0.3160051107406616
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "packet_ratio",
+                "operator": ">",
+                "threshold": 0.0234153363853693
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": ">",
+                "threshold": 0.1615639291703701
+            },
+            {
+                "feature": "packet_ratio",
+                "operator": "<=",
+                "threshold": 0.5955082327127457
+            }
+        ],
+        "prediction": 1,
+        "confidence": 1.0
+    },
+    {
+        "leaf_id": 143,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": 0.3160051107406616
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": -0.6136288940906525
+            },
+            {
+                "feature": "packet_ratio",
+                "operator": ">",
+                "threshold": 0.0234153363853693
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": ">",
+                "threshold": 0.1615639291703701
+            },
+            {
+                "feature": "packet_ratio",
+                "operator": ">",
+                "threshold": 0.5955082327127457
+            }
+        ],
+        "prediction": 0,
+        "confidence": 0.0
+    },
+    {
+        "leaf_id": 148,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": 0.3160051107406616
+            },
+            {
+                "feature": "total_bytes",
+                "operator": "<=",
+                "threshold": -0.0998770110309124
+            },
+            {
+                "feature": "sinpkt",
+                "operator": "<=",
+                "threshold": -0.1361381784081459
+            },
+            {
+                "feature": "total_bytes",
+                "operator": "<=",
+                "threshold": -0.09993859753012657
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": 2.268236517906189
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.7817258883248731
+    },
+    {
+        "leaf_id": 149,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": 0.3160051107406616
+            },
+            {
+                "feature": "total_bytes",
+                "operator": "<=",
+                "threshold": -0.0998770110309124
+            },
+            {
+                "feature": "sinpkt",
+                "operator": "<=",
+                "threshold": -0.1361381784081459
+            },
+            {
+                "feature": "total_bytes",
+                "operator": "<=",
+                "threshold": -0.09993859753012657
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": 2.268236517906189
+            }
+        ],
+        "prediction": 0,
+        "confidence": 0.43089430894308944
+    },
+    {
+        "leaf_id": 151,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": 0.3160051107406616
+            },
+            {
+                "feature": "total_bytes",
+                "operator": "<=",
+                "threshold": -0.0998770110309124
+            },
+            {
+                "feature": "sinpkt",
+                "operator": "<=",
+                "threshold": -0.1361381784081459
+            },
+            {
+                "feature": "total_bytes",
+                "operator": ">",
+                "threshold": -0.09993859753012657
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": "<=",
+                "threshold": 0.1615639328956604
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.6818181818181818
+    },
+    {
+        "leaf_id": 152,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": 0.3160051107406616
+            },
+            {
+                "feature": "total_bytes",
+                "operator": "<=",
+                "threshold": -0.0998770110309124
+            },
+            {
+                "feature": "sinpkt",
+                "operator": "<=",
+                "threshold": -0.1361381784081459
+            },
+            {
+                "feature": "total_bytes",
+                "operator": ">",
+                "threshold": -0.09993859753012657
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": ">",
+                "threshold": 0.1615639328956604
+            }
+        ],
+        "prediction": 0,
+        "confidence": 0.19225634178905207
+    },
+    {
+        "leaf_id": 154,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": 0.3160051107406616
+            },
+            {
+                "feature": "total_bytes",
+                "operator": "<=",
+                "threshold": -0.0998770110309124
+            },
+            {
+                "feature": "sinpkt",
+                "operator": ">",
+                "threshold": -0.1361381784081459
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": 0.4089685082435608
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.9523809523809523
+    },
+    {
+        "leaf_id": 155,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": 0.3160051107406616
+            },
+            {
+                "feature": "total_bytes",
+                "operator": "<=",
+                "threshold": -0.0998770110309124
+            },
+            {
+                "feature": "sinpkt",
+                "operator": ">",
+                "threshold": -0.1361381784081459
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": 0.4089685082435608
+            }
+        ],
+        "prediction": 0,
+        "confidence": 0.0
+    },
+    {
+        "leaf_id": 159,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": 0.3160051107406616
+            },
+            {
+                "feature": "total_bytes",
+                "operator": ">",
+                "threshold": -0.0998770110309124
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": 4.0810229778289795
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": "<=",
+                "threshold": 2.5346593856811523
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": 1.245639145374298
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.5906040268456376
+    },
+    {
+        "leaf_id": 160,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": 0.3160051107406616
+            },
+            {
+                "feature": "total_bytes",
+                "operator": ">",
+                "threshold": -0.0998770110309124
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": 4.0810229778289795
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": "<=",
+                "threshold": 2.5346593856811523
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": 1.245639145374298
+            }
+        ],
+        "prediction": 1,
+        "confidence": 0.852017937219731
+    },
+    {
+        "leaf_id": 162,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": 0.3160051107406616
+            },
+            {
+                "feature": "total_bytes",
+                "operator": ">",
+                "threshold": -0.0998770110309124
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": 4.0810229778289795
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": ">",
+                "threshold": 2.5346593856811523
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": 3.011943817138672
+            }
+        ],
+        "prediction": 0,
+        "confidence": 0.29850746268656714
+    },
+    {
+        "leaf_id": 163,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": 0.3160051107406616
+            },
+            {
+                "feature": "total_bytes",
+                "operator": ">",
+                "threshold": -0.0998770110309124
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": "<=",
+                "threshold": 4.0810229778289795
+            },
+            {
+                "feature": "ct_dst_src_ltm",
+                "operator": ">",
+                "threshold": 2.5346593856811523
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": 3.011943817138672
+            }
+        ],
+        "prediction": 1,
+        "confidence": 1.0
+    },
+    {
+        "leaf_id": 164,
+        "conditions": [
+            {
+                "feature": "sttl",
+                "operator": ">",
+                "threshold": -1.1516156792640686
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.07484214752912521
+            },
+            {
+                "feature": "byte_ratio",
+                "operator": ">",
+                "threshold": -0.021925139240920544
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": 0.3160051107406616
+            },
+            {
+                "feature": "total_bytes",
+                "operator": ">",
+                "threshold": -0.0998770110309124
+            },
+            {
+                "feature": "ct_srv_dst",
+                "operator": ">",
+                "threshold": 4.0810229778289795
+            }
+        ],
+        "prediction": 0,
+        "confidence": 0.0
+    }
+]

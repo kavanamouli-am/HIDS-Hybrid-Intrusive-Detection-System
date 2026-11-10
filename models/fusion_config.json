@@ -1,0 +1,8 @@
+{
+    "formula": "0.4 * signature_score + 0.6 * xgb_probability",
+    "weights": {
+        "signature": 0.4,
+        "xgb": 0.6
+    },
+    "optimal_threshold": 0.75
+}

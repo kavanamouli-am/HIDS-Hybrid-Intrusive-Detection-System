@@ -1,0 +1,341 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<style>
+    /* Inspector Specific Styles */
+    .inspector-header {
+        margin-bottom: 2rem;
+        border-bottom: 1px solid var(--card-border);
+        padding-bottom: 1rem;
+    }
+    
+    .inspector-header h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: -0.3px;
+    }
+    
+    /* Upload Box */
+    .upload-container {
+        background-color: var(--card-bg);
+        border: 1px dashed var(--card-border);
+        border-radius: 12px;
+        padding: 2rem;
+        text-align: center;
+        transition: border-color 0.25s ease;
+        cursor: pointer;
+        margin-bottom: 2rem;
+        position: relative;
+    }
+    
+    .upload-container:hover {
+        border-color: rgba(255, 255, 255, 0.15);
+        background-color: rgba(255, 255, 255, 0.005);
+    }
+    
+    .upload-icon {
+        font-size: 2.25rem;
+        color: var(--primary);
+        margin-bottom: 0.75rem;
+    }
+    
+    .upload-input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+    }
+    
+    .btn-primary {
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 0.55rem 1.5rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: opacity 0.15s ease;
+    }
+    
+    .btn-primary:hover {
+        opacity: 0.9;
+    }
+    
+    /* Metrics Summary Cards */
+    .batch-metrics-card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 12px;
+        padding: 1.25rem;
+        margin-bottom: 2rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+        .batch-metrics-card {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    .batch-metric {
+        text-align: center;
+        padding: 0.5rem;
+        border-right: 1px solid var(--card-border);
+    }
+    
+    .batch-metric:last-child {
+        border-right: none;
+    }
+    
+    .batch-metric-label {
+        font-size: 0.75rem;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+    
+    .batch-metric-val {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--text-color);
+        margin-top: 0.25rem;
+    }
+    
+    /* Results Table */
+    .table-container {
+        background-color: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: none;
+    }
+    
+    .table-responsive {
+        width: 100%;
+        overflow-x: auto;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        font-size: 0.85rem;
+    }
+    
+    th {
+        background-color: #0b0c10;
+        color: var(--text-secondary);
+        font-weight: 500;
+        padding: 0.85rem 1.15rem;
+        border-bottom: 1px solid var(--card-border);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    td {
+        padding: 0.8rem 1.15rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+        color: var(--text-color);
+        white-space: nowrap;
+    }
+    
+    tr:last-child td {
+        border-bottom: none;
+    }
+    
+    tr:hover td {
+        background-color: rgba(255, 255, 255, 0.005);
+    }
+    
+    /* Action Button styling */
+    .btn-action {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        border-radius: 6px;
+        background-color: rgba(255, 255, 255, 0.04);
+        color: var(--text-secondary);
+        border: 1px solid var(--card-border);
+        text-decoration: none;
+        transition: all 0.15s ease;
+    }
+    
+    .btn-action:hover {
+        background-color: var(--primary);
+        color: white;
+        border-color: var(--primary);
+    }
+    
+    .score-cell {
+        font-family: monospace;
+        font-weight: 600;
+    }
+    
+    /* Preloaded Sample buttons */
+    .btn-sample {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.5rem 1rem;
+        background-color: rgba(255, 255, 255, 0.02);
+        border: 1px solid var(--card-border);
+        border-radius: 8px;
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.82rem;
+        transition: all 0.15s ease;
+    }
+    
+    .btn-sample:hover, .btn-sample.active {
+        background-color: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .btn-sample.active {
+        background-color: rgba(255, 255, 255, 0.08);
+        border-color: var(--primary);
+    }
+</style>
+
+<div class="inspector-header">
+    <h1>Connection Inspector (Batch Analyzer)</h1>
+    <p style="color: var(--text-secondary); font-size: 0.9rem;">Select one of the preloaded traffic datasets below to run the HIDS detection pipeline.</p>
+</div>
+
+<!-- Preloaded Samples Container -->
+<div class="card" style="margin-bottom: 2rem;">
+    <div class="card-header" style="border: none; margin-bottom: 0.5rem; padding-bottom: 0;">
+        <div class="card-title" style="font-size: 1.05rem;">
+            Preloaded Sample Datasets (UNSW-NB15)
+        </div>
+    </div>
+    <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1.25rem;">
+        Click any of the preloaded traffic samples extracted directly from the UNSW-NB15 test set to analyze them instantly.
+    </p>
+    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        {% for sample in preloaded_samples %}
+        <a href="{{ url_for('detection', sample=sample.filename) }}" class="btn-sample {% if active_sample == sample.filename %}active{% endif %}">
+            <span>{{ sample.name }}</span>
+            {% if sample.type == 'Safe' %}
+            <span class="badge badge-normal" style="font-size: 0.65rem; padding: 0.1rem 0.4rem; box-shadow: none; border-radius: 4px;">Normal</span>
+            {% elif sample.type == 'Threat' %}
+            <span class="badge badge-attack" style="font-size: 0.65rem; padding: 0.1rem 0.4rem; box-shadow: none; border-radius: 4px;">Threat</span>
+            {% else %}
+            <span class="badge" style="background-color: rgba(59,130,246,0.1); color: var(--primary); font-size: 0.65rem; padding: 0.1rem 0.4rem; border: 1px solid rgba(59,130,246,0.2); text-transform: uppercase; border-radius: 4px;">Mixed</span>
+            {% endif %}
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+{% if file_uploaded %}
+    {% if has_labels and batch_metrics %}
+    <!-- Batch Metrics Card -->
+    <h2 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+        Batch Classification Performance
+    </h2>
+    <div class="batch-metrics-card">
+        <div class="batch-metric">
+            <div class="batch-metric-label">Accuracy</div>
+            <div class="batch-metric-val" style="color: var(--primary);">{{ "%.2f"|format(batch_metrics.accuracy * 100) }}%</div>
+        </div>
+        <div class="batch-metric">
+            <div class="batch-metric-label">Recall (Detection Rate)</div>
+            <div class="batch-metric-val" style="color: var(--accent);">{{ "%.2f"|format(batch_metrics.recall * 100) }}%</div>
+        </div>
+        <div class="batch-metric">
+            <div class="batch-metric-label">F1-Score</div>
+            <div class="batch-metric-val" style="color: var(--warning);">{{ "%.2f"|format(batch_metrics.f1_score * 100) }}%</div>
+        </div>
+        <div class="batch-metric">
+            <div class="batch-metric-label">Precision</div>
+            <div class="batch-metric-val" style="color: var(--success);">{{ "%.2f"|format(batch_metrics.precision * 100) }}%</div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Prediction Table Card -->
+    <div class="card" style="padding: 0;">
+        <div class="card-header" style="margin-bottom: 0; padding: 1.5rem 1.75rem; border-bottom: 1px solid var(--card-border);">
+            <div class="card-title">
+                Connection Inspection Log
+            </div>
+            <span class="badge badge-normal" style="box-shadow: none;">Showing {{ predictions|length }} rows</span>
+        </div>
+        
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th># ID</th>
+                        <th>Actual Type (Attack Category)</th>
+                        {% for feat in selected_features %}
+                        <th>{{ feat }}</th>
+                        {% endfor %}
+                        <th>DT Rule Conf.</th>
+                        <th>XGB Prob.</th>
+                        <th>Fusion Score</th>
+                        <th>Hybrid Prediction Label</th>
+                        <th>Predicted Type</th>
+                        <th>Explain</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in predictions %}
+                    <tr>
+                        <td style="font-weight: 500;">{{ row.idx + 1 }}</td>
+                        <td>
+                            {% if row.attack_cat is defined and row.attack_cat %}
+                                <span style="font-weight: 500;">{{ row.attack_cat }}</span>
+                            {% else %}
+                                <span style="color: var(--text-secondary);">Normal</span>
+                            {% endif %}
+                        </td>
+                        {% for feat in selected_features %}
+                        <td style="font-family: monospace;">
+                            {{ row[feat] }}
+                        </td>
+                        {% endfor %}
+                        <td class="score-cell">{{ row.signature_score }}</td>
+                        <td class="score-cell">{{ row.ml_probability }}</td>
+                        <td class="score-cell" style="font-weight: 700;">{{ row.fusion_score }}</td>
+                        <td>
+                            {% if row.final_prediction == 1 %}
+                            <span class="badge badge-attack" style="font-family: monospace;">1</span>
+                            {% else %}
+                            <span class="badge badge-normal" style="font-family: monospace;">0</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if row.final_prediction == 1 %}
+                            <span class="badge badge-attack">Attack</span>
+                            {% else %}
+                            <span class="badge badge-normal">Normal</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <a href="{{ url_for('explain', row_idx=row.idx) }}" class="btn-action" title="Explain prediction with SHAP" style="font-size: 0.72rem; width: auto; padding: 0 0.5rem; height: 24px;">
+                                Explain
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endif %}
+
+
+{% endblock %}

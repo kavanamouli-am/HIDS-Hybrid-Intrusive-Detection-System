@@ -1,0 +1,188 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<style>
+    .explain-header {
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        border-bottom: 1px solid var(--card-border);
+        padding-bottom: 1rem;
+    }
+    
+    .btn-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background-color: rgba(255, 255, 255, 0.02);
+        border: 1px solid var(--card-border);
+        color: var(--text-color);
+        padding: 0.45rem 0.9rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.85rem;
+        transition: border-color 0.15s ease, background-color 0.15s ease;
+    }
+    
+    .btn-back:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.15);
+    }
+    
+    /* Interactive SHAP Visual Block */
+    .shap-viz-card {
+        background-color: white;
+        border: 1px solid var(--card-border);
+        border-radius: 12px;
+        padding: 1.25rem;
+        margin-bottom: 1rem;
+        min-height: 200px;
+        overflow: hidden;
+    }
+    
+    .iframe-container {
+        width: 100%;
+        height: 180px;
+        border: none;
+    }
+    
+    /* Feature Info Grid */
+    .features-list-card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 0.75rem;
+        margin-top: 1rem;
+    }
+    
+    .feature-item {
+        background-color: rgba(255, 255, 255, 0.015);
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        border-radius: 8px;
+        padding: 0.6rem 0.85rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .feature-name {
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+        font-weight: 500;
+        font-family: monospace;
+    }
+    
+    .feature-val {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--text-color);
+        font-family: monospace;
+    }
+</style>
+
+<div class="explain-header">
+    <a href="{{ url_for('detection') }}" class="btn-back">
+        Back to Logs
+    </a>
+    <div>
+        <h1 style="font-size: 1.6rem; font-weight: 700;">Local SHAP Explanation (Connection #{{ row_idx + 1 }})</h1>
+        <p style="color: var(--text-secondary); font-size: 0.85rem;">Individual contribution of top features towards the ML engine prediction</p>
+    </div>
+</div>
+
+<!-- Interactive Explainer Plot -->
+<div class="card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+    <div class="card-header" style="border: none; margin-bottom: 0.5rem; padding-bottom: 0;">
+        <div class="card-title" style="font-size: 1.05rem;">
+            Interactive SHAP Force Plot
+        </div>
+        <span class="badge badge-normal" style="box-shadow: none;">Logit Link probability scale</span>
+    </div>
+    <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1.5rem;">
+        Red features push the model's output higher (increasing attack threat likelihood), while blue features drag it lower (closer to normal). 
+        The output value represents the model's final logit prediction mapped to the classification probability.
+    </p>
+    <div class="shap-viz-card">
+        <iframe src="{{ plot_url }}" class="iframe-container"></iframe>
+    </div>
+</div>
+
+<!-- Table of feature values -->
+<div class="features-list-card">
+    <div class="card-title" style="font-size: 1.05rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding-bottom: 0.75rem;">
+        Inspected Feature Attribute Values
+    </div>
+    <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.5rem;">Raw inputs extracted for rule evaluation and ML classification.</p>
+    
+    <div class="features-grid" id="features-grid-placeholder">
+        <!-- Render a placeholder to load quickly, we'll populate using python values if passed -->
+    </div>
+</div>
+
+<script>
+    // We will retrieve features for this index from our raw cached upload
+    // Since we're rendering a sub-template, let's load features from page data or parse standard session.
+    // To make this robust, we can inject raw values or simply load them from iframe if needed.
+    // However, the simplest way is to fetch the info from our active batch.
+    // Let's call a small fetch endpoint to get raw row values, or let the parent inject it!
+    // Since we want this to be bulletproof, let's query a small endpoint in Flask, or since we know the values, 
+    // we can retrieve them by loading standard data! Let's fetch them from the page.
+    
+    fetch('/detection')
+    .then(res => res.text())
+    .then(html => {
+        // parse the DOM to locate connection row elements
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const rows = doc.querySelectorAll('tbody tr');
+        
+        // Find row that matches row_idx
+        let targetRow = null;
+        for(let r of rows) {
+            const idCell = r.querySelector('td');
+            if (idCell && parseInt(idCell.innerText) === ({{ row_idx }} + 1)) {
+                targetRow = r;
+                break;
+            }
+        }
+        
+        if (targetRow) {
+            const cells = targetRow.querySelectorAll('td');
+            // Populate list
+            const features = [
+                {name: 'Protocol (proto)', val: cells[1].innerText},
+                {name: 'State (state)', val: cells[2].innerText},
+                {name: 'Service (service)', val: cells[3].innerText},
+                {name: 'Total Bytes (total_bytes)', val: cells[4].innerText},
+                {name: 'TTL Ratio (sttl/dttl)', val: cells[5].innerText},
+                {name: 'DT Signature Confidence', val: cells[6].innerText},
+                {name: 'XGBoost ML Probability', val: cells[7].innerText},
+                {name: 'Weighted Fusion Score', val: cells[8].innerText},
+                {name: 'Prediction Classification', val: cells[9].innerText.trim()}
+            ];
+            
+            const grid = document.getElementById('features-grid-placeholder');
+            grid.innerHTML = '';
+            features.forEach(f => {
+                grid.innerHTML += `
+                    <div class="feature-item">
+                        <span class="feature-name">${f.name}</span>
+                        <span class="feature-val">${f.val}</span>
+                    </div>
+                `;
+            });
+        } else {
+            document.getElementById('features-grid-placeholder').innerHTML = '<p style="color: var(--text-secondary); padding: 1rem;">Feature values details loaded inside the SHAP interactive plot above.</p>';
+        }
+    });
+</script>
+{% endblock %}

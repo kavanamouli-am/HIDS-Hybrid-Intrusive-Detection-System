@@ -1,0 +1,336 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<style>
+    /* Dashboard Specific Styles */
+    .dashboard-header {
+        margin-bottom: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        border-bottom: 1px solid var(--card-border);
+        padding-bottom: 1rem;
+    }
+    
+    .dashboard-header h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: -0.3px;
+    }
+    
+    /* Metrics Grid */
+    .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .metric-card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 10px;
+        padding: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 110px;
+        position: relative;
+    }
+    
+    .metric-label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--text-secondary);
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+    }
+    
+    .metric-value {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: var(--text-color);
+        margin: 0.15rem 0;
+        letter-spacing: -0.4px;
+    }
+    
+    .metric-status {
+        font-size: 0.72rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        color: var(--text-secondary);
+    }
+    
+    .metric-status.pass {
+        color: var(--success);
+    }
+    
+    .metric-status.fail {
+        color: var(--danger);
+    }
+    
+    /* Grid Layout for Charts */
+    .charts-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    @media (max-width: 900px) {
+        .charts-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    .chart-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+        border-radius: 8px;
+        padding: 1.25rem;
+        border: 1px solid var(--card-border);
+        margin-top: 1rem;
+        min-height: 250px;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+    
+    .chart-container img {
+        max-width: 100%;
+        max-height: 320px;
+        border-radius: 4px;
+        object-fit: contain;
+    }
+    
+    /* Config items */
+    .config-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        margin-top: 1rem;
+    }
+    
+    .config-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.6rem 0.85rem;
+        background-color: rgba(255, 255, 255, 0.015);
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.03);
+    }
+    
+    .config-key {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+    }
+    
+    .config-value {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--text-color);
+    }
+</style>
+
+<div class="dashboard-header">
+    <div>
+        <h1>Evaluation Summary & Architecture</h1>
+        <p style="color: var(--text-secondary); font-size: 0.9rem;">HIDS performance metrics achieved on the test dataset (UNSW-NB15)</p>
+    </div>
+    {% if not models_ready %}
+    <span class="badge badge-attack" style="padding: 0.5rem 1rem;">Models: Not Loaded</span>
+    {% else %}
+    <span class="badge badge-normal" style="padding: 0.5rem 1rem; text-shadow: none;">System Online & Loaded</span>
+    {% endif %}
+</div>
+
+<!-- Metrics Cards -->
+<div class="metrics-grid">
+    <!-- Accuracy -->
+    <div class="metric-card">
+        <div class="metric-label">
+            Accuracy
+        </div>
+        <div class="metric-value">{{ "%.2f"|format(metrics.accuracy * 100) if metrics.accuracy else "N/A" }}%</div>
+        <div class="metric-status" style="color: var(--text-secondary);">
+            Global Performance
+        </div>
+    </div>
+    
+    <!-- Recall -->
+    <div class="metric-card">
+        <div class="metric-label">
+            Recall
+        </div>
+        <div class="metric-value">{{ "%.2f"|format(metrics.recall * 100) if metrics.recall else "N/A" }}%</div>
+        <div class="metric-status" style="color: var(--text-secondary);">
+            Detection Sensitivity
+        </div>
+    </div>
+    
+    <!-- F1 Score -->
+    <div class="metric-card">
+        <div class="metric-label">
+            F1-Score
+        </div>
+        <div class="metric-value">{{ "%.2f"|format(metrics.f1_score * 100) if metrics.f1_score else "N/A" }}%</div>
+        <div class="metric-status" style="color: var(--text-secondary);">
+            Harmonic Balance
+        </div>
+    </div>
+    
+    <!-- Precision -->
+    <div class="metric-card">
+        <div class="metric-label">
+            Precision
+        </div>
+        <div class="metric-value">{{ "%.2f"|format(metrics.precision * 100) if metrics.precision else "N/A" }}%</div>
+        <div class="metric-status" style="color: var(--text-secondary);">
+            False Alarm Control
+        </div>
+    </div>
+    
+    <!-- ROC AUC -->
+    <div class="metric-card">
+        <div class="metric-label">
+            ROC-AUC
+        </div>
+        <div class="metric-value">{{ "%.2f"|format(metrics.roc_auc * 100) if metrics.roc_auc else "N/A" }}%</div>
+        <div class="metric-status" style="color: var(--text-secondary);">
+            Discrim. Power
+        </div>
+    </div>
+</div>
+
+<!-- Primary Graphics and Configurations -->
+<div class="charts-grid">
+    <!-- Left: Model details + Confusion Matrix -->
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">
+                Hybrid System Architecture
+            </div>
+            <span class="badge badge-normal" style="box-shadow: none;">Tuned Threshold: {{ "%.2f"|format(threshold) }}</span>
+        </div>
+        <div class="config-list">
+            <div class="config-item">
+                <div class="config-key">Signature Engine:</div>
+                <div class="config-value">Decision Tree (83 rules extracted)</div>
+            </div>
+            <div class="config-item">
+                <div class="config-key">Machine Learning Engine:</div>
+                <div class="config-value">XGBoost (GridSearchCV tuned)</div>
+            </div>
+            <div class="config-item">
+                <div class="config-key">Fusion weights:</div>
+                <div class="config-value">0.4 * Signature + 0.6 * ML</div>
+            </div>
+            <div class="config-item">
+                <div class="config-key">Decision Threshold:</div>
+                <div class="config-value"><strong>{{ "%.4f"|format(threshold) }}</strong></div>
+            </div>
+        </div>
+        
+        <div style="margin-top: 2rem;">
+            <div class="card-title" style="font-size: 1.05rem; margin-bottom: 0.5rem;">
+                Test Confusion Matrix
+            </div>
+            <div class="chart-container">
+                {% if metrics %}
+                <img src="{{ url_for('static', filename='confusion_matrix.png') }}" alt="Confusion Matrix">
+                {% else %}
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">No evaluation metrics loaded. Run the training pipeline first.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Right: Random Forest Feature Importance -->
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">
+                Feature Importance (Random Forest)
+            </div>
+            <span class="badge badge-normal" style="box-shadow: none;">Top 20 Features</span>
+        </div>
+        <p style="color: var(--text-secondary); font-size: 0.85rem;">Determined using Gini importances of a Random Forest Classifier during pipeline feature selection.</p>
+        <div class="chart-container" style="min-height: 380px;">
+            {% if metrics %}
+            <img src="{{ url_for('static', filename='rf_importance.png') }}" alt="Random Forest Feature Importance">
+            {% else %}
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Plot will appear once pipeline is run.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- Advanced Fusion Diagnostics -->
+<div class="charts-grid">
+    <!-- Left: Comparative ROC Curve -->
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">
+                Model Evaluation: Comparative ROC Curve
+            </div>
+            <span class="badge badge-normal" style="box-shadow: none;">ROC-AUC comparison</span>
+        </div>
+        <p style="color: var(--text-secondary); font-size: 0.85rem;">Plots Receiver Operating Characteristic curves comparing individual classifiers against the Weighted Fusion HIDS.</p>
+        <div class="chart-container" style="min-height: 380px;">
+            {% if metrics %}
+            <img src="{{ url_for('static', filename='roc_curve.png') }}" alt="Comparative ROC Curve">
+            {% else %}
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Plot will appear once pipeline is run.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Right: Threshold Sensitivity Tuning Curve -->
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">
+                Fusion Sensitivity Analysis
+            </div>
+            <span class="badge badge-normal" style="box-shadow: none;">Tuning trade-off</span>
+        </div>
+        <p style="color: var(--text-secondary); font-size: 0.85rem;">Visualizes HIDS accuracy, recall, and F1-score across different decision thresholds, showing the optimal value selected.</p>
+        <div class="chart-container" style="min-height: 380px;">
+            {% if metrics %}
+            <img src="{{ url_for('static', filename='threshold_tuning.png') }}" alt="Threshold Tuning Curve">
+            {% else %}
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Plot will appear once pipeline is run.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- Global SHAP Explanations -->
+<div class="card" style="margin-bottom: 2rem;">
+    <div class="card-header">
+        <div class="card-title">
+            Explainable AI: Global SHAP Summary
+        </div>
+        <span class="badge badge-normal" style="box-shadow: none;">XGBoost Explainability</span>
+    </div>
+    <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1rem;">
+        SHAP summary plot representing impact of top selected features on the ML Engine's anomaly predictions. 
+        Features are ranked by sum of SHAP value magnitudes. Positive SHAP values (red) increase the likelihood of predicting an attack, while negative values (blue) support a normal traffic classification.
+    </p>
+    <div class="chart-container" style="min-height: 400px; padding: 1.5rem;">
+        {% if metrics %}
+        <img src="{{ url_for('static', filename='shap_summary.png') }}" alt="SHAP Global Summary" style="max-height: 480px; object-fit: contain;">
+        {% else %}
+        <p style="color: var(--text-secondary); font-size: 0.9rem;">Training pipeline must be executed to generate the SHAP global visualization.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

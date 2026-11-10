@@ -1,0 +1,214 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<style>
+    .rules-header {
+        margin-bottom: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        border-bottom: 1px solid var(--card-border);
+        padding-bottom: 1rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .rules-header h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: -0.3px;
+    }
+    
+    .search-box {
+        position: relative;
+        width: 300px;
+    }
+    
+    .search-input {
+        width: 100%;
+        background-color: var(--card-bg);
+        border: 1px solid var(--card-border);
+        color: var(--text-color);
+        padding: 0.55rem 1rem 0.55rem 2.2rem;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        outline: none;
+        transition: border-color 0.2s ease;
+    }
+    
+    .search-input:focus {
+        border-color: rgba(255, 255, 255, 0.25);
+    }
+    
+    .search-icon {
+        position: absolute;
+        left: 0.8rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--text-secondary);
+        font-size: 0.85rem;
+    }
+    
+    /* Rule Card layout */
+    .rules-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .rule-card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 12px;
+        padding: 1.25rem;
+        transition: border-color 0.2s ease;
+    }
+    
+    .rule-card:hover {
+        border-color: rgba(255, 255, 255, 0.12);
+    }
+    
+    .rule-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.75rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .rule-id {
+        font-size: 0.82rem;
+        color: var(--text-secondary);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .rule-badge-group {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .rule-body {
+        background-color: rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.02);
+        border-radius: 8px;
+        padding: 0.85rem 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .condition-tag {
+        background-color: rgba(255, 255, 255, 0.02);
+        border: 1px solid var(--card-border);
+        color: var(--text-color);
+        padding: 0.25rem 0.5rem;
+        border-radius: 6px;
+        font-family: monospace;
+        font-size: 0.8rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+    }
+    
+    .condition-operator {
+        color: var(--primary);
+        font-weight: 500;
+    }
+    
+    .join-text {
+        font-size: 0.75rem;
+        color: var(--text-secondary);
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    
+    .rule-conclusion {
+        margin-left: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 600;
+    }
+</style>
+
+<div class="rules-header">
+    <div>
+        <h1>Signature Rules Engine (Knowledge Base)</h1>
+        <p style="color: var(--text-secondary); font-size: 0.9rem;">Collated logical signature paths extracted from the trained Decision Tree Classifier.</p>
+    </div>
+    
+    <div class="search-box">
+        <input type="text" class="search-input" id="rules-search" placeholder="Filter rules by feature or class..." onkeyup="filterRules()" style="padding-left: 1rem;">
+    </div>
+</div>
+
+<div class="rules-list" id="rules-list-container">
+    {% for rule in rules %}
+    <div class="rule-card" data-rule-info="{{ rule.conditions|map(attribute='feature')|join(' ') }} {{ 'attack' if rule.prediction == 1 else 'normal' }}">
+        <div class="rule-header">
+            <span class="rule-id">Signature Rule #{{ loop.index }}</span>
+            <div class="rule-badge-group">
+                <span class="badge" style="background-color: rgba(255, 255, 255, 0.05); color: var(--text-secondary); font-weight: normal; text-transform: none; box-shadow: none;">
+                    Leaf ID: {{ rule.leaf_id }}
+                </span>
+                <span class="badge" style="background-color: rgba(59, 130, 246, 0.08); color: var(--primary); box-shadow: none;">
+                    Confidence: {{ "%.2f"|format(rule.confidence * 100) }}%
+                </span>
+                {% if rule.prediction == 1 %}
+                <span class="badge badge-attack">Threat</span>
+                {% else %}
+                <span class="badge badge-normal">Safe</span>
+                {% endif %}
+            </div>
+        </div>
+        <div class="rule-body">
+            <span class="join-text" style="color: var(--primary);">IF</span>
+            
+            {% for cond in rule.conditions %}
+                <div class="condition-tag">
+                    <span>{{ cond.feature }}</span>
+                    <span class="condition-operator">{{ cond.operator }}</span>
+                    <span>{{ "%.4f"|format(cond.threshold) }}</span>
+                </div>
+                {% if not loop.last %}
+                    <span class="join-text">AND</span>
+                {% endif %}
+            {% endfor %}
+            
+            <span style="color: var(--text-secondary); margin: 0 0.5rem; font-weight: 500;">&rarr;</span>
+            
+            <div class="rule-conclusion">
+                <span class="join-text" style="color: var(--success);">THEN</span>
+                {% if rule.prediction == 1 %}
+                <span class="badge badge-attack" style="box-shadow: none;">Attack</span>
+                {% else %}
+                <span class="badge badge-normal" style="box-shadow: none;">Normal</span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<script>
+    function filterRules() {
+        const query = document.getElementById('rules-search').value.toLowerCase();
+        const cards = document.querySelectorAll('.rule-card');
+        
+        cards.forEach(card => {
+            const info = card.getAttribute('data-rule-info').toLowerCase();
+            if (info.includes(query)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+</script>
+{% endblock %}

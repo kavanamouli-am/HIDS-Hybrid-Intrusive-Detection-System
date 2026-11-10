@@ -1,0 +1,22 @@
+[
+    "sttl",
+    "ct_state_ttl",
+    "dload",
+    "dttl",
+    "packet_ratio",
+    "byte_ratio",
+    "dur",
+    "sinpkt",
+    "tcprtt",
+    "ttl_difference",
+    "rate",
+    "dmean",
+    "load_ratio",
+    "ct_srv_dst",
+    "ackdat",
+    "ct_dst_src_ltm",
+    "state",
+    "sload",
+    "total_bytes",
+    "dbytes"
+]
